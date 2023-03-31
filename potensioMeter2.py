@@ -16,8 +16,15 @@ tickL = .1
 tickW = .05
 tickH = .05
 
+
+
 for theta in np.linspace(5*np.pi/6,np.pi/6,6):
     tickMajor = box(color=color.black,pos=vector(arrowLength*np.cos(theta),arrowLength*np.sin(theta),0),size=vector(tickL,tickW,tickH),axis=vector(arrowLength*np.cos(theta),arrowLength*np.sin(theta),0))
+    lab = label(box=False,pos=vector(1.2*arrowLength*np.cos(theta),1.2*arrowLength*np.sin(theta),0),size=vector(tickL,tickW,tickH),axis=vector(arrowLength*np.cos(theta),arrowLength*np.sin(theta),0))
+
+for theta in np.linspace(5*np.pi/6,np.pi/6,54):
+    tickMini = box(color=color.black,pos=vector(arrowLength*np.cos(theta),arrowLength*np.sin(theta),0),size=vector(tickL/2,tickW/2,tickH/2),axis=vector(arrowLength*np.cos(theta),arrowLength*np.sin(theta),0))
+
 
 
 arduinoData = serial.Serial('com3', 115200)

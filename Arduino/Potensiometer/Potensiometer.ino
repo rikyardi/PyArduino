@@ -1,14 +1,15 @@
 int potPin = A0;
-int potVal;
+int readVal;
+float potVal;
 
 void setup() {
   Serial.begin(115200);
-  pinMode(potPin, INPUT);
+
 }
 
 void loop() {
-  potVal = analogRead(potPin);
+  readVal = analogRead(potPin);
+  potVal = (5./1023.)*readVal;
   Serial.println(potVal);
-  delay(1000);
-
+  delay(500);
 }
